@@ -4,6 +4,7 @@ import (
 	"bufio"
 	"fmt"
 	"os"
+	"reflect"
 	"strconv"
 	"strings"
 )
@@ -122,22 +123,90 @@ func (node *Node) Height() int {
 	}
 }
 
-/**
-Go不支持函数默认值和Static且不想使用全局遍历,　手动传入Num为0!
- */
-func (node *Node) LeafNum(num int)  {
-	if node == nil { // 递归出口
+
+
+// 计算二叉树结点数量
+func (node *Node) LeafNum(n *int)  {
+	if node == nil {
 		return
 	}
 
 	if node.Left == nil && node.Right == nil {
-		num++
+		(*n)++
 	}
-
-	node.Left.LeafNum(num)
-	node.Right.LeafNum(num)
+	node.Left.LeafNum(n)
+	node.Right.LeafNum(n)
+		
 }
 
+
+// 判断二叉树是否存在某个元素
+func (node *Node) Search(Data interface{})  {
+	if node == nil {
+		return
+	}
+
+	// 判断类型和值是否相等
+	if reflect.DeepEqual(node.Data, Data) {
+		return
+	}
+
+	// 左右子树递归查找
+	node.Left.Search(Data)
+	node.Right.Search(Data)
+}
+
+
+// 销毁二叉树
+func (node *Node) Destroy()  {
+	if node == nil {
+		return
+	}
+
+	// 递归销毁左子树
+	node.Left.Destroy()
+	node.Left = nil
+
+	// 递归销毁右子树
+	node.Right.Destroy()
+	node.Right = nil
+
+	node = nil
+
+}
+
+
+// 二叉树的翻转
+func (node *Node) Reverse() {
+	if node == nil {
+		return
+	}
+
+	// 交换左右子树
+	node.Left, node.Right = node.Right, node.Left
+
+	// 递归翻转
+	node.Left.Reverse()
+	node.Right.Reverse()
+}
+
+
+// 二叉树的拷贝
+func (node *Node) Copy() * Node {
+	if node == nil {
+		return nil
+	}
+
+	left := node.Left.Copy()
+	right := node.Right.Copy()
+
+	newNode := new(Node)
+	newNode.Data = node.Data
+	newNode.Left = left
+	newNode.Right = right
+
+	return newNode
+}
 
 
 func main()  {
