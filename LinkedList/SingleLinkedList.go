@@ -6,11 +6,14 @@ import "fmt"
 单链表的实现
  */
 
+
+// 链表结点
 type SinListNode struct {
 	next *SinListNode
 	val int
 }
 
+// 链表结构
 type SinLinkedList struct {
 	head *SinListNode
 	len uint
@@ -39,7 +42,7 @@ func NewLinkedList() *SinLinkedList  {
 
 
 // 在指定节点后面插入节点
-func (this *SinLinkedList) InsertAffter(p *SinListNode, v interface{}) bool {
+func (this *SinLinkedList) InsertAffter(p *SinListNode, v int) bool {
 	if nil == p {
 		return false
 	}
@@ -53,7 +56,7 @@ func (this *SinLinkedList) InsertAffter(p *SinListNode, v interface{}) bool {
 
 
 // 在某个节点前面插入节点
-func (this *SinLinkedList) InsertBefore(p *SinListNode, v interface{}) bool {
+func (this *SinLinkedList) InsertBefore(p *SinListNode, v int) bool {
 	if nil == p || p == this.head {
 		return false
 	}
@@ -82,12 +85,12 @@ func (this *SinLinkedList) InsertBefore(p *SinListNode, v interface{}) bool {
 }
 
 // 在链表头部插入节点
-func (this *SinLinkedList) InsertToHead(v interface{}) bool {
+func (this *SinLinkedList) InsertToHead(v int) bool {
 	return this.InsertAffter(this.head, v)
 }
 
 // 在链表尾部插入节点
-func (this *SinLinkedList) InsertToTail(v interface{}) bool  {
+func (this *SinLinkedList) InsertToTail(v int) bool  {
 	cur := this.head
 
 	// 查找尾节点
@@ -114,6 +117,7 @@ func (this *SinLinkedList) FindByIndex(idx uint) *SinListNode {
 	return cur
 }
 
+// 删除指定结点
 func (this *SinLinkedList) DeleteNode(p *SinListNode) bool {
 	if p == nil {
 		return false
