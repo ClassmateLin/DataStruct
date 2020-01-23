@@ -107,6 +107,9 @@ func (node *Node) PostSort() {
 	fmt.Print(node.Data, " ")
 }
 
+/*
+二叉树的深度
+ */
 func (node *Node) Height() int {
 	if node == nil {
 		return 0
@@ -118,8 +121,8 @@ func (node *Node) Height() int {
 		leftHeight++
 		return leftHeight
 	}else {
-		leftHeight++
-		return leftHeight
+		rightHeight++
+		return rightHeight
 	}
 }
 
