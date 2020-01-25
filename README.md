@@ -1,7 +1,7 @@
 # 数据结构与算法实现(Go)
 
 记得第一次自学数据结构与算法是在18年参加蓝桥杯,
-时隔两年，且当时学得一般，如今再次回顾一下。
+时隔两年，再次回顾一下。
 
 
 |序号|名称及代码链接|
@@ -13,7 +13,19 @@
 |5|[单链表的实现](./LinkedList/SingleLinkedList.go)|
 |6|[数组栈的实现](./Stack/ArrayStack.go)|
 |7|[链表栈的实现](./Stack/LinkedListStack.go)|
-|8||
-|9||
+|8|[顺序队列的实现](./Queue/ArrayQueue.go)|
+|9|[链式队列的实现](./Queue/LinkedListQueue.go)|
+|10|[循环队列的实现](./Queue/CircularQueue.go)|
+|11|[冒泡排序](./Sorts/BubbleSort.go)|
+|12|[桶排序](./Sorts/BucketSort.go)|
+|13|[插入排序](./Sorts/InsertSort.go)|
+|14|[选择排序](./Sorts/SelectionSort.go)|
+|15|[计数排序](./Sorts/CountingSort.go)|
+|16|[快速排序](./Sorts/QuickSort.go)|
+|17|[归并排序](./Sorts/MergeSort.go)|
+|18|[查找算法](./Search/Search.go)|
+|19|[跳跃表](./SkipList/SkipList.go)|
+|20|[LRU算法](./LRU/LRU.go)|
+|||
 
 
