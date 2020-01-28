@@ -26,6 +26,7 @@
 |18|[查找算法](./Search/Search.go)|
 |19|[跳跃表](./SkipList/SkipList.go)|
 |20|[LRU算法](./LRU/LRU.go)|
-|||
+|21|[最大堆](./Heap/MaxHeap.go)|
+|22|[最小堆排序](./Heap/HeapSort.go)|
 
 
